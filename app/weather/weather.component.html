@@ -1,0 +1,114 @@
+<div class="hero">
+	<div class="container">
+		<form action="#" class="find-location">		
+			<input #term (keyup)="search(term.value)" type="text" placeholder="Find your location...">
+			<!-- <input type="submit" value="Find"> -->
+		</form>		
+	</div>	
+</div>
+
+<!-- <div>{{items | async}}
+	{{items.query.results.channel.location.country | async}}
+</div>
+ -->
+<div *ngFor="let item of items | async">
+	{{item | json}}	
+	<h1>test</h1>
+</div>
+
+<div class="forecast-table">
+	<div class="container" *ngIf="isVisible">
+		<div class="forecast-container">
+			<div class="today forecast">
+				<div class="forecast-header">
+					<div class="day">Monday</div>
+					<div class="date">6 Oct</div>
+				</div> <!-- .forecast-header -->
+				<div class="forecast-content">
+					<div class="location">New York</div>
+					<div class="degree">
+						<div class="num">23<sup>o</sup>C</div>
+						<div class="forecast-icon">
+							<img src="assets/images/icons/icon-1.svg" alt="" width=90>
+						</div>	
+					</div>
+					<span><img src="assets/images/icon-umberella.png" alt="">20%</span>
+					<span><img src="assets/images/icon-wind.png" alt="">18km/h</span>
+					<span><img src="assets/images/icon-compass.png" alt="">East</span>
+				</div>
+			</div>
+			<div class="forecast">
+				<div class="forecast-header">
+					<div class="day">Tuesday</div>
+				</div> <!-- .forecast-header -->
+				<div class="forecast-content">
+					<div class="forecast-icon">
+						<img src="assets/images/icons/icon-3.svg" alt="" width=48>
+					</div>
+					<div class="degree">23<sup>o</sup>C</div>
+					<small>18<sup>o</sup></small>
+				</div>
+			</div>
+			<div class="forecast">
+				<div class="forecast-header">
+					<div class="day">Wednesday</div>
+				</div> <!-- .forecast-header -->
+				<div class="forecast-content">
+					<div class="forecast-icon">
+						<img src="assets/images/icons/icon-5.svg" alt="" width=48>
+					</div>
+					<div class="degree">23<sup>o</sup>C</div>
+					<small>18<sup>o</sup></small>
+				</div>
+			</div>
+			<div class="forecast">
+				<div class="forecast-header">
+					<div class="day">Thursday</div>
+				</div> <!-- .forecast-header -->
+				<div class="forecast-content">
+					<div class="forecast-icon">
+						<img src="assets/images/icons/icon-7.svg" alt="" width=48>
+					</div>
+					<div class="degree">23<sup>o</sup>C</div>
+					<small>18<sup>o</sup></small>
+				</div>
+			</div>
+			<div class="forecast">
+				<div class="forecast-header">
+					<div class="day">Friday</div>
+				</div> <!-- .forecast-header -->
+				<div class="forecast-content">
+					<div class="forecast-icon">
+						<img src="assets/images/icons/icon-12.svg" alt="" width=48>
+					</div>
+					<div class="degree">23<sup>o</sup>C</div>
+					<small>18<sup>o</sup></small>
+				</div>
+			</div>
+			<div class="forecast">
+				<div class="forecast-header">
+					<div class="day">Saturday</div>
+				</div> <!-- .forecast-header -->
+				<div class="forecast-content">
+					<div class="forecast-icon">
+						<img src="assets/images/icons/icon-13.svg" alt="" width=48>
+					</div>
+					<div class="degree">23<sup>o</sup>C</div>
+					<small>18<sup>o</sup></small>
+				</div>
+			</div>
+			<div class="forecast">
+				<div class="forecast-header">
+					<div class="day">Sunday</div>
+				</div> <!-- .forecast-header -->
+				<div class="forecast-content">
+					<div class="forecast-icon">
+						<img src="assets/images/icons/icon-14.svg" alt="" width=48>
+					</div>
+					<div class="degree">23<sup>o</sup>C</div>
+					<small>18<sup>o</sup></small>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
