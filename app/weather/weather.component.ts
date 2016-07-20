@@ -25,12 +25,14 @@ export class WeatherComponent {
 
 	constructor (private weatherService: WeatherService) {}
 
-	search(term: string) { this.searchTermStream.next(term); }
+	search(term: string) {this.isVisible = false;  this.searchTermStream.next(term); }
 
-	items: Observable<string[]> = this.searchTermStream
-    .debounceTime(2000)
+	items = this.searchTermStream
+    .debounceTime(1000)
     .distinctUntilChanged()
-    .switchMap((term: string) => this.weatherService.search(term));
+    .switchMap((term: string) => this.weatherService.search(term))
+    .subscribe(data => {this.isVisible = true; console.log(data); this.items =  data});;
+    
 
 
 	// search (term: string) {

@@ -7,14 +7,22 @@
 	</div>	
 </div>
 
-<!-- <div>{{items | async}}
-	{{items.query.results.channel.location.country | async}}
+
+<!-- <div *ngIf="items">{{items | json}}</div> -->
+<div>
+<!-- hello
+{{ items.query?.results?.channel?.location?.city }}
+{{ items.query?.results?.channel?.location?.country }} -->
 </div>
- -->
-<div *ngFor="let item of items | async">
+
+<div>{{ items.query?.results?.channel?.item?.condition?.temp }}</div>
+<!-- query.results.channel.item.condition.temp -->
+<!-- query.results.channel.language -->
+
+<!-- <div *ngFor="let item of items | async">
 	{{item | json}}	
 	<h1>test</h1>
-</div>
+</div> -->
 
 <div class="forecast-table">
 	<div class="container" *ngIf="isVisible">
@@ -25,9 +33,9 @@
 					<div class="date">6 Oct</div>
 				</div> <!-- .forecast-header -->
 				<div class="forecast-content">
-					<div class="location">New York</div>
+					<div class="location">{{ items.query?.results?.channel?.location?.city }}, {{ items.query?.results?.channel?.location?.country }}</div>
 					<div class="degree">
-						<div class="num">23<sup>o</sup>C</div>
+						<div class="num">{{ items.query?.results?.channel?.item?.condition?.temp }}<sup>o</sup>F</div>
 						<div class="forecast-icon">
 							<img src="assets/images/icons/icon-1.svg" alt="" width=90>
 						</div>	
